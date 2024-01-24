@@ -91,15 +91,19 @@ class TradingLabsRecorder(Analyzer):
         pass
     
     def notify_order(self, order):
+        print("Order Notify")
         pass
 
     def notify_trade(self, trade):
+        print("Trade Notify")
         pass
 
     def notify_cashvalue(self, cash, value):
+        print("CashValue Notify")
         pass
 
     def notify_fund(self, cash, value, fundvalue, shares):
+        print("Fund Notify")
         pass
 
     def get_analysis(self):
