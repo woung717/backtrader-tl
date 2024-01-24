@@ -30,6 +30,7 @@ import backtrader.feeds as btfeeds
 import backtrader.indicators as btind
 from backtrader.analyzers import (SQN, AnnualReturn, TimeReturn, SharpeRatio,
                                   TradeAnalyzer)
+from backtrader.tl_interfaces.tl_recorder import TradingLabsRecorder
 
 
 class LongShortStrategy(bt.Strategy):
@@ -168,6 +169,8 @@ def runstrategy():
 
     cerebro.addanalyzer(TradeAnalyzer)
 
+    cerebro.addanalyzer(TradingLabsRecorder)
+
     cerebro.addwriter(bt.WriterFile, csv=args.writercsv, rounding=4)
 
     # And run it
@@ -182,7 +185,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='TimeReturn')
 
     parser.add_argument('--data', '-d',
-                        default='../../datas/2005-2006-day-001.txt',
+                        default='./datas/2005-2006-day-001.txt',
                         help='data to add to the system')
 
     parser.add_argument('--fromdate', '-f',

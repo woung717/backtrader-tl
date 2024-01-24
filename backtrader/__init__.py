@@ -85,6 +85,8 @@ from . import timer as timer
 
 from . import talib as talib
 
+from . import tl_interfaces as tl_interfaces
+
 # Load contributed indicators and studies
 import backtrader.indicators.contrib
 import backtrader.studies.contrib
